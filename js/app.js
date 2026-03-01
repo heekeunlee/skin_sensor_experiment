@@ -213,9 +213,8 @@ function drawEddyCanvas() {
 
 // ── Init ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Restore last tab
-  const lastTab = localStorage.getItem('skinsense_tab') || 'tab-home';
-  showTab(lastTab);
+  // Always start at tab-home as per user request
+  showTab('tab-home');
 
   initChecklists();
   initAccordions();
