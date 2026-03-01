@@ -384,15 +384,15 @@ header {
 }
 
 .badge-blue {
-  background: rgba(79, 158, 255, 0.15);
-  color: var(--accent2);
-  border: 1px solid rgba(79, 158, 255, 0.3);
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid rgba(0, 122, 255, 0.2);
 }
 
 .badge-purple {
-  background: rgba(167, 139, 250, 0.15);
-  color: var(--accent3);
-  border: 1px solid rgba(167, 139, 250, 0.3);
+  background: rgba(88, 86, 214, 0.1);
+  color: #5856d6;
+  border: 1px solid rgba(88, 86, 214, 0.2);
 }
 
 /* ── Info box ── */
@@ -411,8 +411,8 @@ header {
 }
 
 .info-box.note {
-  background: rgba(79, 158, 255, 0.08);
-  border-color: var(--accent2);
+  background: var(--accent-light);
+  border-color: var(--accent);
 }
 
 .info-box.warn {
@@ -421,8 +421,8 @@ header {
 }
 
 .info-box.important {
-  background: rgba(167, 139, 250, 0.08);
-  border-color: var(--accent3);
+  background: rgba(88, 86, 214, 0.08);
+  border-color: #5856d6;
 }
 
 /* ── Step list ── */
@@ -447,7 +447,7 @@ header {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -599,7 +599,7 @@ tr:hover td {
   top: 8px;
   bottom: 8px;
   width: 2px;
-  background: linear-gradient(180deg, var(--accent), var(--accent2), var(--accent3));
+  background: var(--accent);
   border-radius: 2px;
 }
 
@@ -626,7 +626,7 @@ tr:hover td {
   transform: translateY(-50%);
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1165,13 +1165,13 @@ hr {
 }
 
 .tag-b {
-  background: rgba(79, 158, 255, 0.12);
-  color: var(--accent2);
+  background: var(--accent-light);
+  color: var(--accent);
 }
 
 .tag-c {
-  background: rgba(167, 139, 250, 0.12);
-  color: var(--accent3);
+  background: rgba(88, 86, 214, 0.1);
+  color: #5856d6;
 }
 
 /* ── Scrollbar ── */

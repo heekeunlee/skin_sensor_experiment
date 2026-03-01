@@ -47,7 +47,7 @@ function updateProgress() {
     const btn = document.querySelector(`[data-tab="tab-sem${i}"]`);
     if (btn && passed) {
       btn.innerHTML = btn.innerHTML.includes('✅') ? btn.innerHTML : '✅ ' + btn.innerHTML;
-      btn.style.color = 'var(--mint)';
+      btn.style.color = 'var(--success)';
     }
   }
 }
@@ -157,8 +157,8 @@ function drawEddyCanvas() {
     ctx.fillRect(0, H * 0.86, W, H * 0.14);
 
     // Labels
-    ctx.fillStyle = 'rgba(255,255,255,0.5)';
-    ctx.font = '11px Noto Sans KR';
+    ctx.fillStyle = 'rgba(0,0,0,0.6)';
+    ctx.font = '500 12px Noto Sans KR';
     ctx.fillText('각질층', 8, H * 0.63);
     ctx.fillText('표피층', 8, H * 0.80);
     ctx.fillText('진피층', 8, H * 0.95);
