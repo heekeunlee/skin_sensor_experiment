@@ -200,7 +200,7 @@ function drawEddyCanvas() {
     }
 
     // Arrow indicating frequency change
-    ctx.fillStyle = `rgba(167,139,250,${0.6 + 0.3 * Math.sin(t * 0.05)})`;
+    ctx.fillStyle = `rgba(0,0,0,${0.6 + 0.2 * Math.sin(t * 0.05)})`;
     ctx.font = 'bold 12px Inter';
     ctx.fillText('Δf →', W - 70, H * 0.35);
     ctx.fillText('수분%', W - 70, H * 0.47);
