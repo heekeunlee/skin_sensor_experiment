@@ -1,3 +1,11 @@
+// ── Sidebar Toggle ──────────────────────────────────────────────
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('show');
+}
+
 // ── Navigation ──────────────────────────────────────────────────
 function showTab(id) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -32,6 +40,16 @@ function updateProgress() {
   const label = document.getElementById('progress-label');
   if (fill) fill.style.width = pct + '%';
   if (label) label.textContent = `전체 진도: ${done}/${all} 완료 (${pct}%)`;
+
+  // Update navigation visual for passed weeks
+  for (let i = 1; i <= 4; i++) {
+    const passed = localStorage.getItem(`skinsense_week_${i}_passed`) === '1';
+    const btn = document.querySelector(`[data-tab="tab-sem${i}"]`);
+    if (btn && passed) {
+      btn.innerHTML = btn.innerHTML.includes('✅') ? btn.innerHTML : '✅ ' + btn.innerHTML;
+      btn.style.color = 'var(--mint)';
+    }
+  }
 }
 
 // ── Accordion ────────────────────────────────────────────────────
@@ -76,6 +94,18 @@ function answerQuiz(el, isCorrect, explanation) {
   const fb = card.querySelector('.quiz-feedback');
   fb.classList.add('show', isCorrect ? 'correct-fb' : 'wrong-fb');
   fb.textContent = (isCorrect ? '✅ 정답! ' : '❌ 오답. ') + explanation;
+
+  // If correct, mark the current week as 'passed' in progress (optional logic)
+  if (isCorrect) {
+    const weekNum = card.closest('.tab-content').id.replace('tab-sem', '');
+    if (weekNum) markWeekPassed(weekNum);
+  }
+}
+
+function markWeekPassed(num) {
+  localStorage.setItem(`skinsense_week_${num}_passed`, '1');
+  // Visual feedback could be added here
+  updateProgress();
 }
 
 // ── Skin layer tooltips ──────────────────────────────────────────
@@ -120,18 +150,18 @@ function drawEddyCanvas() {
 
     // Skin layers
     ctx.fillStyle = 'rgba(255,190,120,0.25)';
-    ctx.fillRect(0, H*0.52, W, H*0.18);
+    ctx.fillRect(0, H * 0.52, W, H * 0.18);
     ctx.fillStyle = 'rgba(255,160,80,0.2)';
-    ctx.fillRect(0, H*0.70, W, H*0.16);
+    ctx.fillRect(0, H * 0.70, W, H * 0.16);
     ctx.fillStyle = 'rgba(200,100,60,0.15)';
-    ctx.fillRect(0, H*0.86, W, H*0.14);
+    ctx.fillRect(0, H * 0.86, W, H * 0.14);
 
     // Labels
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '11px Noto Sans KR';
-    ctx.fillText('각질층', 8, H*0.63);
-    ctx.fillText('표피층', 8, H*0.80);
-    ctx.fillText('진피층', 8, H*0.95);
+    ctx.fillText('각질층', 8, H * 0.63);
+    ctx.fillText('표피층', 8, H * 0.80);
+    ctx.fillText('진피층', 8, H * 0.95);
 
     // Coil
     const cx = W / 2;
@@ -170,7 +200,7 @@ function drawEddyCanvas() {
     }
 
     // Arrow indicating frequency change
-    ctx.fillStyle = `rgba(167,139,250,${0.6 + 0.3*Math.sin(t*0.05)})`;
+    ctx.fillStyle = `rgba(167,139,250,${0.6 + 0.3 * Math.sin(t * 0.05)})`;
     ctx.font = 'bold 12px Inter';
     ctx.fillText('Δf →', W - 70, H * 0.35);
     ctx.fillText('수분%', W - 70, H * 0.47);

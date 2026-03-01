@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkinSense 교육 포털 — 비접촉 피부 수분 측정 프로젝트</title>
-  <meta name="description" content="문과 대학생을 위한 비접촉 피부 수분 측정 실험 교육 포털. 세미나, 용어집, 실험 가이드를 제공합니다.">
+  <meta name="description" content="기초부터 배우는 비접촉 피부 수분 측정 실험 교육 포털. 세미나, 용어집, 실험 가이드를 제공합니다.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,23 +14,44 @@
   <!-- ══════════════════════════════════════
      HEADER / NAV
 ═══════════════════════════════════════ -->
+  <!-- ── Sidebar Overlay ─ -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <!-- ── Sidebar ─ -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="side-nav">
+      <button class="nav-btn" data-tab="tab-home" onclick="showTab('tab-home'); toggleSidebar();">🏠 홈</button>
+      <button class="nav-btn" data-tab="tab-sem1" onclick="showTab('tab-sem1'); toggleSidebar();">📚 세미나1: 피부</button>
+      <button class="nav-btn" data-tab="tab-sem2" onclick="showTab('tab-sem2'); toggleSidebar();">🔬 세미나2: 센서</button>
+      <button class="nav-btn" data-tab="tab-sem3" onclick="showTab('tab-sem3'); toggleSidebar();">📊 세미나3: 데이터</button>
+      <button class="nav-btn" data-tab="tab-sem4" onclick="showTab('tab-sem4'); toggleSidebar();">⚖️ 세미나4:
+        과학적사고</button>
+      <button class="nav-btn" data-tab="tab-invitro" onclick="showTab('tab-invitro'); toggleSidebar();">🧪
+        In-Vitro</button>
+      <button class="nav-btn" data-tab="tab-invivo" onclick="showTab('tab-invivo'); toggleSidebar();">🧑‍🔬
+        In-Vivo</button>
+      <button class="nav-btn" data-tab="tab-clinical" onclick="showTab('tab-clinical'); toggleSidebar();">🏥
+        임상실험</button>
+      <button class="nav-btn" data-tab="tab-glossary" onclick="showTab('tab-glossary'); toggleSidebar();">📖
+        용어집</button>
+      <button class="nav-btn" data-tab="tab-resources" onclick="showTab('tab-resources'); toggleSidebar();">📥
+        자료실</button>
+      <button class="nav-btn" data-tab="tab-educ" onclick="showTab('tab-educ'); toggleSidebar();">📚 교육 자료</button>
+    </nav>
+  </aside>
+
+  <!-- ── Header ── -->
   <header>
     <div class="header-inner">
       <a href="#" class="logo" onclick="showTab('tab-home');return false;">
         <div class="logo-icon">🧴</div>
         <span class="logo-text">SkinSense</span>
       </a>
-      <nav class="main-nav">
-        <button class="nav-btn" data-tab="tab-home" onclick="showTab('tab-home')">🏠 홈</button>
-        <button class="nav-btn" data-tab="tab-sem1" onclick="showTab('tab-sem1')">📚 세미나1: 피부</button>
-        <button class="nav-btn" data-tab="tab-sem2" onclick="showTab('tab-sem2')">🔬 세미나2: 센서</button>
-        <button class="nav-btn" data-tab="tab-sem3" onclick="showTab('tab-sem3')">📊 세미나3: 데이터</button>
-        <button class="nav-btn" data-tab="tab-invitro" onclick="showTab('tab-invitro')">🧪 In-Vitro</button>
-        <button class="nav-btn" data-tab="tab-invivo" onclick="showTab('tab-invivo')">🧑‍🔬 In-Vivo</button>
-        <button class="nav-btn" data-tab="tab-clinical" onclick="showTab('tab-clinical')">🏥 임상실험</button>
-        <button class="nav-btn" data-tab="tab-glossary" onclick="showTab('tab-glossary')">📖 용어집</button>
-        <button class="nav-btn" data-tab="tab-educ" onclick="showTab('tab-educ')">📚 교육 자료</button>
-      </nav>
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -41,15 +62,15 @@
     <div class="page">
 
       <div class="hero">
-        <div class="hero-badge">🎓 문과생도 할 수 있는 과학 실험</div>
+        <div class="hero-badge">🎓 누구나 도전하는 기초 과학 실험</div>
         <h1 class="hero-title">
           피부를 <span
-            style="background:linear-gradient(90deg,#00d4aa,#4f9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">건드리지
+            style="background:linear-gradient(90deg,#00d4aa,#4f9eff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">건드리지
             않고</span><br>수분을 측정한다
         </h1>
         <p class="hero-desc">
           맴돌이전류(Eddy Current)를 이용한 비접촉 피부 수분 측정 실험 프로젝트.<br>
-          문과 대학생 3명이 12주 만에 논문 수준의 데이터를 만들어내는 여정.
+          비전공 입문생 3명이 12주 만에 논문 수준의 데이터를 만들어내는 도전의 여정.
         </p>
       </div>
 
@@ -195,7 +216,7 @@
             </div>
           </div>
           <div
-            style="font-size:42px;font-weight:900;background:linear-gradient(90deg,#00d4aa,#4f9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+            style="font-size:42px;font-weight:900;background:linear-gradient(90deg,#00d4aa,#4f9eff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
             ≥ 0.85</div>
           <p style="margin-top:8px;">이 숫자가 0.85 이상이면 비접촉 센서가 접촉식 표준장비(Corneometer)와 거의 비슷한 정확도를 가진다는 것을 증명합니다.</p>
         </div>
@@ -208,7 +229,7 @@
             </div>
           </div>
           <div
-            style="font-size:42px;font-weight:900;background:linear-gradient(90deg,#4f9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+            style="font-size:42px;font-weight:900;background:linear-gradient(90deg,#4f9eff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
             < 5%</div>
               <p style="margin-top:8px;">여러 번 측정해도 결과가 일관되게 나와야 합니다. 측정 편차 5% 이내가 목표입니다.</p>
           </div>
@@ -258,8 +279,23 @@
         </div>
 
         <div class="info-box note">
-          🏗️ <strong>비유: 피부는 페인트가 칠해진 벽돌벽!</strong><br>
-          가장 바깥 페인트 층(각질층)이 수분을 보호합니다. 페인트가 벗겨지면(건성 상태) 안쪽이 메말라 갈라지고 문제가 생깁니다.
+          🏗️ <strong>비유: 피부는 '방수 페인트'가 칠해진 벽돌벽!</strong><br>
+          피부 세포는 벽돌이고, 그 사이를 채우는 기름(지질)은 시멘트입니다. 이 위에 칠해진 투명한 '방수 페인트'가 바로 각질층의 수분막입니다.
+          페인트가 오래되어 갈라지면(건조한 피부) 안쪽 벽돌이 드러나 물이 새나가고 피부가 아프게 됩니다.
+        </div>
+
+        <div class="section-heading">🚩 왜 '비접촉'이 혁명적일까?</div>
+        <div class="grid-2">
+          <div class="card">
+            <strong>기존 방식 (접촉)</strong>
+            <p style="font-size:13px; margin-top:5px;">꾹 누르는 압력 때문에 피부 속 수분이 옆으로 밀려나 오차가 생깁니다. 마치 젖은 스폰지를 누르면 물이 짜지는 것과
+              같습니다.</p>
+          </div>
+          <div class="card" style="border: 2px solid var(--mint);">
+            <strong>우리 방식 (비접촉)</strong>
+            <p style="font-size:13px; margin-top:5px;">피부를 건드리지 않아 수분의 원래 상태를 그대로 유지합니다. 위생적이며, 화장품이 흡수되는 찰나의 순간도 방해 없이
+              관찰 가능합니다.</p>
+          </div>
         </div>
 
         <div class="section-heading">💧 수분에 따른 피부 변화</div>
@@ -386,9 +422,17 @@
           </li>
           <li class="step-item">
             <div class="step-num">5</div>
-            <div class="step-text">강하진 맴돌이전류가 센서 코일의 진동 <strong>주파수(f)를 떨어뜨린다</strong> → 이걸 측정하면 수분을 알 수 있다!</div>
+            <div class="step-text">강해진 맴돌이전류가 센서 코일의 진동 <strong>주파수(f)를 떨어뜨린다</strong>. 이 '주파수가 떨어지는 정도'를 보고 거꾸로 수분량을
+              계산합니다.</div>
           </li>
         </ul>
+
+        <div class="info-box tip">
+          <strong>💡 입문자를 위한 '무선 스피커' 비유</strong><br>
+          코일을 무선 스피커라고 생각해보세요. 자기장은 스피커에서 나오는 소리입니다.
+          피부에 수분이 많으면 소리가 더 잘 울려 퍼지고(맴돌이전류 강해짐), 스피커는 소리를 내는 데 힘이 덜 듭니다(주파수 변화).
+          우리는 스피커가 얼마나 '편하게' 작동하는지를 보고 피부가 얼마나 촉촉한지 알아내는 것입니다.
+        </div>
 
         <div class="section-heading">📡 Skin Effect (표피 효과) — 왜 100MHz 인가?</div>
         <div class="table-wrap">
@@ -506,502 +550,609 @@
             <span class="accordion-arrow">▼</span>
           </div>
           <div class="accordion-body">
-            <p>의학/바이오 논문에서 새로운 의료기기를 만들 때, 기존 표준기기와 <strong>"차이(Error)"가 안전한 허용범위 안에 들어있는지</strong> 한눈에 그리는 전문적인 그래프
-              기법입니다.</p>
+            <p>"두 기기(우리 센서 vs 표준 장비)의 차이점"을 시각화합니다. 차이가 일정 범위(LoA) 안에 들어오면 우리 센서가 '합격'임을 의미합니다. 전문적인 과학 논문의 필수 그래프입니다.
+            </p>
           </div>
         </div>
 
-        <div class="section-heading">📝 이번 주 과제</div>
-        <ul class="checklist">
-          <li>
-            <div class="check-box"></div>
-            <div class="check-text"><span class="tag tag-b">B</span> 아무 데이터점 20개로 엑셀 산점도(점그래프) 그려보고 R² 값 표시 띄워보기</div>
-          </li>
-          <li>
-            <div class="check-box"></div>
-            <div class="check-text"><span class="tag tag-c">C</span> 생명윤리 동의서(IRB)가 왜 필요한지 짧게 구글검색하기</div>
-          </li>
-          <li>
-            <div class="check-box"></div>
-            <div class="check-text"><span class="tag tag-a">A</span> 자 모양을 대고 연필 길이 10번 재서, 평균 내보기</div>
-          </li>
-        </ul>
+        <div class="section-heading">🧠 3주차 미니 퀴즈</div>
+        <div class="quiz-card">
+          <div class="quiz-q">우리 센서가 표준 장비와 얼마나 '판박이'인지 보여주는 결정적인 통계 숫자는?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false" onclick="answerQuiz(this, false, '평균은 데이터의 중심일 뿐입니다.')">①
+              평균 (Mean)</button>
+            <button class="quiz-option" data-correct="true"
+              onclick="answerQuiz(this, true, '정답! R²(결정계수)가 1에 가까울수록 두 장비는 판박이입니다.')">② R² (결정계수)</button>
+            <button class="quiz-option" data-correct="false" onclick="answerQuiz(this, false, '표준편차는 데이터가 퍼진 정도입니다.')">③
+              표준편차 (SD)</button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
       </div>
     </div>
 
     <!-- ══════════════════════════════════════
+     TAB: 세미나 4 (신규 추가)
+    ═══════════════════════════════════════ -->
+    <div class="tab-content" id="tab-sem4">
+      <div class="page">
+        <div class="page-title">세미나 4주차: <span>"과학적 사고"</span></div>
+        <div class="page-subtitle">📋 실험 설계와 오차 관리, 그리고 논리적 결론 도출하기</div>
+
+        <div class="section-heading">🧪 대조군(Control)이 왜 필요할까?</div>
+        <div class="card">
+          <p>비교 대상이 없으면 변화가 '진짜'인지 알 수 없습니다. </p>
+          <ul style="margin-top:10px; font-size:14px;">
+            <li><strong>실험군:</strong> 보습제를 바른 팔 (변화의 주인공)</li>
+            <li><strong>대조군:</strong> 아무것도 바르지 않은 팔 (비교 대상)</li>
+          </ul>
+          <p style="margin-top:10px; font-size:14px;">환경(온도/습도) 때문에 피부 수분이 변한 건지, 보습제 때문에 변한 건지 구분하기 위해 반드시 필요합니다.</p>
+        </div>
+
+        <div class="section-heading">📝 4주차 미니 퀴즈</div>
+        <div class="quiz-card">
+          <div class="quiz-q">실험에서 '아무것도 하지 않은 비교 대상'을 부르는 말은?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="true"
+              onclick="answerQuiz(this, true, '정답! 대조군이 있어야 실험 결과의 진실성을 입증할 수 있습니다.')">① 대조군 (Control)</button>
+            <button class="quiz-option" data-correct="false" onclick="answerQuiz(this, false, '실험군은 변화를 주는 대상입니다.')">②
+              실험군</button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">📝 이번 주 과제</div>
+    <ul class="checklist">
+      <li>
+        <div class="check-box"></div>
+        <div class="check-text"><span class="tag tag-b">B</span> 아무 데이터점 20개로 엑셀 산점도(점그래프) 그려보고 R² 값 표시 띄워보기</div>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <div class="check-text"><span class="tag tag-c">C</span> 생명윤리 동의서(IRB)가 왜 필요한지 짧게 구글검색하기</div>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <div class="check-text"><span class="tag tag-a">A</span> 자 모양을 대고 연필 길이 10번 재서, 평균 내보기</div>
+      </li>
+    </ul>
+  </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
      TAB: In-Vitro
 ═══════════════════════════════════════ -->
-    <div class="tab-content" id="tab-invitro">
-      <div class="page">
-        <div class="page-title">🧪 <span>In-Vitro 실험 가이드</span></div>
-        <div class="page-subtitle">안전한 소금물로 "더 짠물이 더 촉촉한 피부"를 묘사한다.</div>
+  <div class="tab-content" id="tab-invitro">
+    <div class="page">
+      <div class="page-title">🧪 <span>In-Vitro 실험 가이드</span></div>
+      <div class="page-subtitle">안전한 소금물로 "더 짠물이 더 촉촉한 피부"를 묘사한다.</div>
 
-        <div class="info-box important">
-          <strong>🎯 최종 목표 (Calibration Curve 그리기)</strong><br>
-          농도에 따라 주파수가 어떻게 낮아지는지 공식을 찾아낸다! (R² > 0.7 이 목표)
-        </div>
+      <div class="info-box important">
+        <strong>🎯 최종 목표 (Calibration Curve 그리기)</strong><br>
+        농도에 따라 주파수가 어떻게 낮아지는지 공식을 찾아낸다! (R² > 0.7 이 목표)
+      </div>
 
-        <div class="section-heading">1. 소금물 샘플 준비 (학생 B)</div>
-        <div class="table-wrap">
-          <table>
+      <div class="section-heading">1. 소금물 샘플 준비 (학생 B)</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>컵 번호</th>
+              <th>소금 양(g)</th>
+              <th>물</th>
+              <th>모사하는 피부 상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1번 컵</td>
+              <td>0 g</td>
+              <td>100 mL</td>
+              <td>극건성 (수분 거의 없음)</td>
+            </tr>
+            <tr>
+              <td>2번 컵</td>
+              <td>0.1 g</td>
+              <td>100 mL</td>
+              <td>건성</td>
+            </tr>
+            <tr>
+              <td>3번 컵</td>
+              <td>0.5 g</td>
+              <td>100 mL</td>
+              <td>정상 피부</td>
+            </tr>
+            <tr>
+              <td>4번 컵</td>
+              <td>0.9 g</td>
+              <td>100 mL</td>
+              <td>생리식염수 수준 (수분 충분)</td>
+            </tr>
+            <tr>
+              <td>5번 컵</td>
+              <td>2.0 g</td>
+              <td>100 mL</td>
+              <td>아주 땀나고 촉촉한 상태</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-heading">2. 센서 측정 규칙 (전원 준수)</div>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text">센서 코일을 컵 수면 위 <strong>정확히 2cm 상공</strong>에 고정한다. (스탠드로 단단히 고정, 손떨림 금지!)</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text">아두이노 시리얼 모니터를 켠다. 숫자가 1~2초간 안정화되길 기다린다.</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text">안정된 주파수 숫자 세 칸을 읽어 즉시 종이에 적는다. (예: 100.12MHz)</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text">한 컵당 총 5번 측정한다. 측정이 끝나면 다음 컵으로 바꾼다.</div>
+        </li>
+      </ul>
+
+      <div class="section-heading">3. [출력용] 데이터 기록지</div>
+      <div class="card" id="invitro-sheet" style="background:#fff;color:#000;border-radius:0;">
+        <h3 style="margin-bottom:12px;">In-Vitro 소금물 주파수 측정 기록지</h3>
+        <p>날짜: ______ 측정자: ______ 실내온도: ___°C 실내습도: ___%</p>
+        <div class="table-wrap" style="color:#000;">
+          <table style="border:1px solid #ccc;color:#000;">
             <thead>
-              <tr>
-                <th>컵 번호</th>
-                <th>소금 양(g)</th>
-                <th>물</th>
-                <th>모사하는 피부 상태</th>
+              <tr style="background:#eee;">
+                <th>컵</th>
+                <th>측정1</th>
+                <th>측정2</th>
+                <th>측정3</th>
+                <th>측정4</th>
+                <th>측정5</th>
+                <th>평균</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1번 컵</td>
-                <td>0 g</td>
-                <td>100 mL</td>
-                <td>극건성 (수분 거의 없음)</td>
+                <td>1 (0g)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-                <td>2번 컵</td>
-                <td>0.1 g</td>
-                <td>100 mL</td>
-                <td>건성</td>
+                <td>2 (0.1g)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-                <td>3번 컵</td>
-                <td>0.5 g</td>
-                <td>100 mL</td>
-                <td>정상 피부</td>
+                <td>3 (0.5g)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-                <td>4번 컵</td>
-                <td>0.9 g</td>
-                <td>100 mL</td>
-                <td>생리식염수 수준 (수분 충분)</td>
+                <td>4 (0.9g)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-                <td>5번 컵</td>
-                <td>2.0 g</td>
-                <td>100 mL</td>
-                <td>아주 땀나고 촉촉한 상태</td>
+                <td>5 (2.0g)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <div class="section-heading">2. 센서 측정 규칙 (전원 준수)</div>
-        <ul class="step-list">
-          <li class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-text">센서 코일을 컵 수면 위 <strong>정확히 2cm 상공</strong>에 고정한다. (스탠드로 단단히 고정, 손떨림 금지!)</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-text">아두이노 시리얼 모니터를 켠다. 숫자가 1~2초간 안정화되길 기다린다.</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-text">안정된 주파수 숫자 세 칸을 읽어 즉시 종이에 적는다. (예: 100.12MHz)</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-text">한 컵당 총 5번 측정한다. 측정이 끝나면 다음 컵으로 바꾼다.</div>
-          </li>
-        </ul>
-
-        <div class="section-heading">3. [출력용] 데이터 기록지</div>
-        <div class="card" id="invitro-sheet" style="background:#fff;color:#000;border-radius:0;">
-          <h3 style="margin-bottom:12px;">In-Vitro 소금물 주파수 측정 기록지</h3>
-          <p>날짜: ______ 측정자: ______ 실내온도: ___°C 실내습도: ___%</p>
-          <div class="table-wrap" style="color:#000;">
-            <table style="border:1px solid #ccc;color:#000;">
-              <thead>
-                <tr style="background:#eee;">
-                  <th>컵</th>
-                  <th>측정1</th>
-                  <th>측정2</th>
-                  <th>측정3</th>
-                  <th>측정4</th>
-                  <th>측정5</th>
-                  <th>평균</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1 (0g)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>2 (0.1g)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>3 (0.5g)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>4 (0.9g)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>5 (2.0g)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <button class="btn btn-outline" style="margin-top:10px;" onclick="printSheet('invitro-sheet')">🖨️ 기록지
-          인쇄하기</button>
       </div>
+      <button class="btn btn-outline" style="margin-top:10px;" onclick="printSheet('invitro-sheet')">🖨️ 기록지
+        인쇄하기</button>
     </div>
+  </div>
 
-    <!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      TAB: In-Vivo
 ═══════════════════════════════════════ -->
-    <div class="tab-content" id="tab-invivo">
-      <div class="page">
-        <div class="page-title">🧑‍🔬 <span>In-Vivo (파일럿 인체 실험)</span></div>
-        <div class="page-subtitle">팀원 3명 + 지인 7명, 총 10명의 팔에 도포 전/후 측정을 연습한다.</div>
+  <div class="tab-content" id="tab-invivo">
+    <div class="page">
+      <div class="page-title">🧑‍🔬 <span>In-Vivo (파일럿 인체 실험)</span></div>
+      <div class="page-subtitle">팀원 3명 + 지인 7명, 총 10명의 팔에 도포 전/후 측정을 연습한다.</div>
 
-        <div class="info-box note">
-          <strong>📍 팔은 3구역으로 나눕니다 (가로 3cm, 세로 3cm)</strong><br>
-          - 구역 A : 바셀린 0.1g 바름<br>
-          - 구역 B : 세타필 등 물크림 0.1g 바름<br>
-          - 구역 C : 아무것도 바르지 않음 (대조군)
-        </div>
-
-        <div class="section-heading">⏰ 측정 프로토콜 (매우 중요!)</div>
-        <ul class="step-list">
-          <li class="step-item">
-            <div class="step-num">T0</div>
-            <div class="step-text"><strong>기저값 (도포 전):</strong> 비누로 팔을 씻고 10분 대기 후. <strong>비접촉 센서</strong> 3번,
-              <strong>Corneometer</strong> 5번 양쪽 다 찍는다.
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num" style="background:#f59e0b">발라</div>
-            <div class="step-text">A, B 구역에 보습제를 짜주고 학생 C가 타이머 1분을 재며 부드럽게 문질러 흡수시킨다.</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">T1</div>
-            <div class="step-text"><strong>바른 직후 (당장!):</strong> T+1분 즉각 반응 기록</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">T5</div>
-            <div class="step-text"><strong>T+5분 (초기):</strong> 표면 흡수 완료 단계 기록</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">T10</div>
-            <div class="step-text"><strong>T+10분 (안정기):</strong> 보습력 떨어지는지 지속되는지 기록</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">T30</div>
-            <div class="step-text"><strong>T+30분 (장기 지연):</strong> 최종 잔여 수분 체크</div>
-          </li>
-        </ul>
-
-        <div class="section-heading">🖨️ [출력용] In-Vivo 기록지</div>
-        <div class="card" id="invivo-sheet" style="background:#fff;color:#000;border-radius:0;">
-          <h3 style="margin-bottom:8px;">[개인별] 피부 보습 비교 실험지</h3>
-          <div style="font-size:13px;margin-bottom:12px;">피험자ID: P00___ / 성별: __ 나이: ___ 온도:__°C 습도:__%</div>
-          <table border="1" style="width:100%;text-align:center;border-collapse:collapse;color:#000;">
-            <tr style="background:#eee;">
-              <th>시간</th>
-              <th>기기</th>
-              <th>A(바셀린) 평균</th>
-              <th>B(수분크림) 평균</th>
-              <th>C(무도포) 평균</th>
-            </tr>
-            <tr>
-              <td rowspan="2">기저(T=0)</td>
-              <td>비접촉 센서</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Corneometer</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td rowspan="2">T=1분</td>
-              <td>비접촉 센서</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Corneometer</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td rowspan="2">T=5분</td>
-              <td>비접촉 센서</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Corneometer</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td rowspan="2">T=10분</td>
-              <td>비접촉 센서</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Corneometer</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td rowspan="2">T=30분</td>
-              <td>비접촉 센서</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Corneometer</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-        <button class="btn btn-outline" style="margin-top:10px;" onclick="printSheet('invivo-sheet')">🖨️ 기록지
-          인쇄하기</button>
-
+      <div class="info-box note">
+        <strong>📍 팔은 3구역으로 나눕니다 (가로 3cm, 세로 3cm)</strong><br>
+        - 구역 A : 바셀린 0.1g 바름<br>
+        - 구역 B : 세타필 등 물크림 0.1g 바름<br>
+        - 구역 C : 아무것도 바르지 않음 (대조군)
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <div class="section-heading">⏰ 측정 프로토콜 (매우 중요!)</div>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-num">T0</div>
+          <div class="step-text"><strong>기저값 (도포 전):</strong> 비누로 팔을 씻고 10분 대기 후. <strong>비접촉 센서</strong> 3번,
+            <strong>Corneometer</strong> 5번 양쪽 다 찍는다.
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-num" style="background:#f59e0b">발라</div>
+          <div class="step-text">A, B 구역에 보습제를 짜주고 학생 C가 타이머 1분을 재며 부드럽게 문질러 흡수시킨다.</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">T1</div>
+          <div class="step-text"><strong>바른 직후 (당장!):</strong> T+1분 즉각 반응 기록</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">T5</div>
+          <div class="step-text"><strong>T+5분 (초기):</strong> 표면 흡수 완료 단계 기록</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">T10</div>
+          <div class="step-text"><strong>T+10분 (안정기):</strong> 보습력 떨어지는지 지속되는지 기록</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">T30</div>
+          <div class="step-text"><strong>T+30분 (장기 지연):</strong> 최종 잔여 수분 체크</div>
+        </li>
+      </ul>
+
+      <div class="section-heading">🖨️ [출력용] In-Vivo 기록지</div>
+      <div class="card" id="invivo-sheet" style="background:#fff;color:#000;border-radius:0;">
+        <h3 style="margin-bottom:8px;">[개인별] 피부 보습 비교 실험지</h3>
+        <div style="font-size:13px;margin-bottom:12px;">피험자ID: P00___ / 성별: __ 나이: ___ 온도:__°C 습도:__%</div>
+        <table border="1" style="width:100%;text-align:center;border-collapse:collapse;color:#000;">
+          <tr style="background:#eee;">
+            <th>시간</th>
+            <th>기기</th>
+            <th>A(바셀린) 평균</th>
+            <th>B(수분크림) 평균</th>
+            <th>C(무도포) 평균</th>
+          </tr>
+          <tr>
+            <td rowspan="2">기저(T=0)</td>
+            <td>비접촉 센서</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Corneometer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="2">T=1분</td>
+            <td>비접촉 센서</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Corneometer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="2">T=5분</td>
+            <td>비접촉 센서</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Corneometer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="2">T=10분</td>
+            <td>비접촉 센서</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Corneometer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="2">T=30분</td>
+            <td>비접촉 센서</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Corneometer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <button class="btn btn-outline" style="margin-top:10px;" onclick="printSheet('invivo-sheet')">🖨️ 기록지
+        인쇄하기</button>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
      TAB: 임상실험
 ═══════════════════════════════════════ -->
-    <div class="tab-content" id="tab-clinical">
-      <div class="page">
-        <div class="page-title">🏥 <span>공식 임상 검증</span></div>
-        <div class="page-subtitle">30명 피험자 모집 및 윤리 기준 준수 프로토콜</div>
+  <div class="tab-content" id="tab-clinical">
+    <div class="page">
+      <div class="page-title">🏥 <span>공식 임상 검증</span></div>
+      <div class="page-subtitle">30명 피험자 모집 및 윤리 기준 준수 프로토콜</div>
 
-        <div class="grid-2">
-          <div class="card">
-            <div class="card-icon purple" style="margin-bottom:12px;">📊</div>
-            <div class="card-title">왜 30명 일까요?</div>
-            <p style="margin-top:10px;font-size:13px;">통계학에서 중심극한정리상 '의미 있는 패턴'을 찾아내고 신뢰도(p-value < 0.05)를 가지려면 최소
-                30명(n=30)의 대규모 데이터 확보가 필요합니다.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon mint" style="margin-bottom:12px;">📂</div>
-            <div class="card-title">목표 샘플 그룹화 (층화 샘플링)</div>
-            <p style="margin-top:10px;font-size:13px;">모집 결과가 한쪽에 쏠리지 않도록 조절합니다.<br>
-              • 그룹 1 (Corne < 30) : 10명<br>
-                • 그룹 2 (Corne 30~50) : 10명<br>
-                • 그룹 3 (Corne > 50) : 10명</p>
-          </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon purple" style="margin-bottom:12px;">📊</div>
+          <div class="card-title">왜 30명 일까요?</div>
+          <p style="margin-top:10px;font-size:13px;">통계학에서 중심극한정리상 '의미 있는 패턴'을 찾아내고 신뢰도(p-value < 0.05)를 가지려면 최소
+              30명(n=30)의 대규모 데이터 확보가 필요합니다.</p>
         </div>
-
-        <div class="section-heading">📜 임상 동의서 규정 (IRB 면제 대상 요건)</div>
-        <div class="info-box important">
-          <strong>본 연구는 인체 위해성이 없는 단순 비침습 피부 접촉 실험이므로 '학교 기관 검토 유예(IRB 면제)'에 해당할 확률이 높습니다.</strong><br>
-          단, 피험자에게 안내할 필수 동의서 지침:
+        <div class="card">
+          <div class="card-icon mint" style="margin-bottom:12px;">📂</div>
+          <div class="card-title">목표 샘플 그룹화 (층화 샘플링)</div>
+          <p style="margin-top:10px;font-size:13px;">모집 결과가 한쪽에 쏠리지 않도록 조절합니다.<br>
+            • 그룹 1 (Corne < 30) : 10명<br>
+              • 그룹 2 (Corne 30~50) : 10명<br>
+              • 그룹 3 (Corne > 50) : 10명</p>
         </div>
-        <ul class="step-list">
-          <li class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-text"><strong>자율성:</strong> 실험 중 언제든지 "아 팔아파요 그만할래요" 하고 떠날 수 있다고 알릴 것.</div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-text"><strong>프라이버시 익명화:</strong> 피험자 이름(홍길동) 대신 'P001' 이라는 코드로만 엑셀에 저장할 것. 학교 학번 절대 저장 금지.
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-text"><strong>안전 고지:</strong> 시중 판매 보습제(세타필/바셀린)만 이용하고 인체 유해성 없음 안내.</div>
-          </li>
-        </ul>
-
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <div class="section-heading">📜 임상 동의서 규정 (IRB 면제 대상 요건)</div>
+      <div class="info-box important">
+        <strong>본 연구는 인체 위해성이 없는 단순 비침습 피부 접촉 실험이므로 '학교 기관 검토 유예(IRB 면제)'에 해당할 확률이 높습니다.</strong><br>
+        단, 피험자에게 안내할 필수 동의서 지침:
+      </div>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>자율성:</strong> 실험 중 언제든지 "아 팔아파요 그만할래요" 하고 떠날 수 있다고 알릴 것.</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>프라이버시 익명화:</strong> 피험자 이름(홍길동) 대신 'P001' 이라는 코드로만 엑셀에 저장할 것. 학교 학번 절대 저장 금지.
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>안전 고지:</strong> 시중 판매 보습제(세타필/바셀린)만 이용하고 인체 유해성 없음 안내.</div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
      TAB: 용어집 GLOSSARY
 ═══════════════════════════════════════ -->
-    <div class="tab-content" id="tab-glossary">
-      <div class="page">
-        <div class="page-title">📖 <span>핵심 용어사전</span></div>
-        <div class="page-subtitle">어려운 전공 문서를 읽다가 막히면 여기서 검색하세요!</div>
+  <div class="tab-content" id="tab-glossary">
+    <div class="page">
+      <div class="page-title">📖 <span>핵심 용어사전</span></div>
+      <div class="page-subtitle">어려운 전공 문서를 읽다가 막히면 여기서 검색하세요!</div>
 
-        <!-- Search UI -->
-        <div class="glossary-search">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="glossary-search" placeholder="용어 검색 (예: 맴돌이, R², Corneometer 등)">
-        </div>
-
-        <!-- Glossary Items -->
-        <div class="glossary-item">
-          <div class="glossary-term">맴돌이전류 (Eddy Current)</div>
-          <div class="glossary-term-ko">에디 커런트</div>
-          <div class="glossary-def">자기장이 변할 때 도체 안에 소용돌이 형태로 유도되는 전류입니다. 우리 센서는 피부 수분이 많을수록 전기전도도가 높아져 이 전류가 활발히 일어나는 점을
-            활용합니다.</div>
-          <div class="glossary-analogy"><strong>비유:</strong> 연못(피부)에 돌(자기장)을 던졌을 때 생기는 동그란 물결(전류) 조각들</div>
-        </div>
-
-        <div class="glossary-item">
-          <div class="glossary-term">각질층 (Stratum Corneum)</div>
-          <div class="glossary-term-ko">스트라툼 코르네움</div>
-          <div class="glossary-def">피부 표피의 가장 바깥 부분으로 죽은 세포와 기름(지질)이 겹겹이 쌓인 장벽입니다. 피부에 수분이 날아가는 걸 막아주며 두께는 10~20μm로 매우
-            얇습니다.</div>
-          <div class="glossary-analogy"><strong>비유:</strong> 벽돌(죽은 세포)과 시멘트(지질)로 단단히 쌓아올린 벽.</div>
-        </div>
-
-        <div class="glossary-item">
-          <div class="glossary-term">표피 효과 (Skin Effect)</div>
-          <div class="glossary-term-ko">스킨 이펙트</div>
-          <div class="glossary-def">전자파의 주파수가 높아질수록 전류가 물질의 내부 깊숙이 들어가지 못하고 표면에만 집중해서 흐르는 현상입니다. 센서를 100MHz 주파수로 설정하는
-            결정적 이유입니다.</div>
-          <div class="glossary-analogy"><strong>비유:</strong> FM 라디오 고주파 전파 터널 안에선 직진성이 강해 벽에 튕겨 사라져버림.</div>
-        </div>
-
-        <div class="glossary-item">
-          <div class="glossary-term">Corneometer (코르네오미터)</div>
-          <div class="glossary-term-ko">상용 피부 측정장비</div>
-          <div class="glossary-def">현재 전세계 화장품 회사가 가장 많이 쓰는 정전용량 방식의 접촉식 수분측정기입니다. 이게 내뿜는 값이 현재 수분측정의 황금 기준(Gold
-            standard)입니다.</div>
-          <div class="glossary-analogy"><strong>목적:</strong> 무조건 우리가 만든 기계는 코르네오미터의 데이터 패턴과 판박이로 똑같이 따라가야 성공!</div>
-        </div>
-
-        <div class="glossary-item">
-          <div class="glossary-term">결정계수 (R-squared / R²)</div>
-          <div class="glossary-term-ko">알 스퀘어</div>
-          <div class="glossary-def">두 변수 사이의 관계를 나타내는 통계적 수치입다. 코르네오미터가 올라갈때 우리 기계값도 비슷하게 올라가는 경향이 얼마나 일치하는가 (1.0 = 100%
-            완벽일치 / 0.85 = 우리가 원하는 훌륭한 수준!)</div>
-        </div>
-
-        <div class="glossary-item">
-          <div class="glossary-term">리프트오프 (Lift-off) 오차</div>
-          <div class="glossary-term-ko">센서와 피부 사이 거리 오차</div>
-          <div class="glossary-def">센서 코일이 피부 표면에서 멀어질수록 자기장이 약해져 측정신호가 작아지는 현상. 손이 떨리거나 덜덜거리면 치명적 오차가 발생합니다.</div>
-        </div>
-
-        <div class="glossary-item">
-          <div class="glossary-term">블랜드 알트만 플롯 (Bland-Altman Plot)</div>
-          <div class="glossary-term-ko">의료통계 시각화 기법</div>
-          <div class="glossary-def">두 측정 방법(우리 vs 코르네오)의 측정값 차이를 Y축으로, 평균을 X축으로 그린 그래프. 새로운 기기를 개발했을때 기존 기기와 차이가 허용범위
-            내인지 확인할때 필수.</div>
-        </div>
-
+      <!-- Search UI -->
+      <div class="glossary-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="glossary-search" placeholder="용어 검색 (예: 맴돌이, R², Corneometer 등)">
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <!-- Glossary Items -->
+      <div class="glossary-item">
+        <div class="glossary-term">맴돌이전류 (Eddy Current)</div>
+        <div class="glossary-term-ko">에디 커런트</div>
+        <div class="glossary-def">자기장이 변할 때 도체 안에 소용돌이 형태로 유도되는 전류입니다. 우리 센서는 피부 수분이 많을수록 전기전도도가 높아져 이 전류가 활발히 일어나는 점을
+          활용합니다.</div>
+        <div class="glossary-analogy"><strong>비유:</strong> 연못(피부)에 돌(자기장)을 던졌을 때 생기는 동그란 물결(전류) 조각들</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">각질층 (Stratum Corneum)</div>
+        <div class="glossary-term-ko">스트라툼 코르네움</div>
+        <div class="glossary-def">피부 표피의 가장 바깥 부분으로 죽은 세포와 기름(지질)이 겹겹이 쌓인 장벽입니다. 피부에 수분이 날아가는 걸 막아주며 두께는 10~20μm로 매우
+          얇습니다.</div>
+        <div class="glossary-analogy"><strong>비유:</strong> 벽돌(죽은 세포)과 시멘트(지질)로 단단히 쌓아올린 벽.</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">표피 효과 (Skin Effect)</div>
+        <div class="glossary-term-ko">스킨 이펙트</div>
+        <div class="glossary-def">전자파의 주파수가 높아질수록 전류가 물질의 내부 깊숙이 들어가지 못하고 표면에만 집중해서 흐르는 현상입니다. 센서를 100MHz 주파수로 설정하는
+          결정적 이유입니다.</div>
+        <div class="glossary-analogy"><strong>비유:</strong> FM 라디오 고주파 전파 터널 안에선 직진성이 강해 벽에 튕겨 사라져버림.</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">Corneometer (코르네오미터)</div>
+        <div class="glossary-term-ko">상용 피부 측정장비</div>
+        <div class="glossary-def">현재 전세계 화장품 회사가 가장 많이 쓰는 정전용량 방식의 접촉식 수분측정기입니다. 이게 내뿜는 값이 현재 수분측정의 황금 기준(Gold
+          standard)입니다.</div>
+        <div class="glossary-analogy"><strong>목적:</strong> 무조건 우리가 만든 기계는 코르네오미터의 데이터 패턴과 판박이로 똑같이 따라가야 성공!</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">결정계수 (R-squared / R²)</div>
+        <div class="glossary-term-ko">알 스퀘어</div>
+        <div class="glossary-def">두 변수 사이의 관계를 나타내는 통계적 수치입다. 코르네오미터가 올라갈때 우리 기계값도 비슷하게 올라가는 경향이 얼마나 일치하는가 (1.0 = 100%
+          완벽일치 / 0.85 = 우리가 원하는 훌륭한 수준!)</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">리프트오프 (Lift-off) 오차</div>
+        <div class="glossary-term-ko">센서와 피부 사이 거리 오차</div>
+        <div class="glossary-def">센서 코일이 피부 표면에서 멀어질수록 자기장이 약해져 측정신호가 작아지는 현상. 손이 떨리거나 덜덜거리면 치명적 오차가 발생합니다.</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">블랜드 알트만 플롯 (Bland-Altman Plot)</div>
+        <div class="glossary-term-ko">의료통계 시각화 기법</div>
+        <div class="glossary-def">두 측정 방법(우리 vs 코르네오)의 측정값 차이를 Y축으로, 평균을 X축으로 그린 그래프. 새로운 기기를 개발했을때 기존 기기와 차이가 허용범위
+          내인지 확인할때 필수.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
      TAB: 교육 자료 (EDUCATIONAL)
 ═══════════════════════════════════════ -->
-    <div class="tab-content" id="tab-educ">
-      <div class="page">
-        <div class="page-title">📚 <span>원리 비교 교육 자료</span></div>
-        <div class="page-subtitle">고교 수준에서도 이해할 수 있는 정전용량 vs 임피던스 측정 원리</div>
+  <div class="tab-content" id="tab-educ">
+    <div class="page">
+      <div class="page-title">📚 <span>원리 비교 교육 자료</span></div>
+      <div class="page-subtitle">고교 수준에서도 이해할 수 있는 정전용량 vs 임피던스 측정 원리</div>
 
-        <div class="section-heading">1️⃣ 접촉식 코네오미터 – 정전용량(Capacitance) 변화</div>
-        <div class="card">
-          <img src="img/capacitor_diagram.png" alt="정전용량 원리"
-            style="max-width:100%; display:block; margin:0 auto; border-radius:8px;">
-          <div style="margin-top:15px;">
-            <strong>원리:</strong> 두 개의 작은 전극 사이에 피부를 놓고 전압을 인가합니다. 물(수분)은 전기적으로 유전율이 높아 전극 사이의 정전용량이 커지게 되는데, 센서는 이 변화를
-            감지합니다.
-          </div>
-          <div class="info-box tip" style="margin-top:10px;">
-            💡 <strong>비유:</strong> 전극 두 개를 <strong>전기 저울</strong>이라고 생각하세요. 수분이 많아지면 저울 눈금이 올라가고 센서가 이를 읽어냅니다.
-          </div>
+      <div class="section-heading">1️⃣ 접촉식 코네오미터 – 정전용량(Capacitance) 변화</div>
+      <div class="card">
+        <img src="img/capacitor_diagram.png" alt="정전용량 원리"
+          style="max-width:100%; display:block; margin:0 auto; border-radius:8px;">
+        <div style="margin-top:15px;">
+          <strong>원리:</strong> 두 개의 작은 전극 사이에 피부를 놓고 전압을 인가합니다. 물(수분)은 전기적으로 유전율이 높아 전극 사이의 정전용량이 커지게 되는데, 센서는 이 변화를
+          감지합니다.
         </div>
-
-        <div class="section-heading">2️⃣ 맴돌이 전류 센서 – 임피던스(Impedance) 변화</div>
-        <div class="card">
-          <img src="img/impedance_diagram.png" alt="임피던스 원리"
-            style="max-width:100%; display:block; margin:0 auto; border-radius:8px;">
-          <div style="margin-top:15px;">
-            <strong>원리:</strong> 코일 위에 고주파 전류를 흐르게 하여 피부에 맴돌이 전류를 유도합니다. 피부에 수분이 많을수록 전기전도도가 높아져 맴돌이 전류가 강해지고, 코일의
-            임피던스(저항 성분)가 감소합니다.
-          </div>
-          <div class="info-box note" style="margin-top:10px;">
-            📻 <strong>비유:</strong> 코일을 <strong>무선 스피커</strong>라고 생각하세요. 물이 많으면 소리(전류 소용돌이)가 더 잘 나게 되고, 스피커는 더 적은 힘으로
-            작동하게 됩니다.
-          </div>
-        </div>
-
-        <div class="section-heading">3️⃣ 한눈에 비교하기</div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>항목</th>
-                <th>코네오미터 (정전용량)</th>
-                <th>비접촉 센서 (임피던스)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>접촉 여부</strong></td>
-                <td>피부에 직접 닿음</td>
-                <td>비접촉 (코일을 띄움)</td>
-              </tr>
-              <tr>
-                <td><strong>측정 원리</strong></td>
-                <td>정전용량 증가 ↑</td>
-                <td>임피던스 감소 ↓</td>
-              </tr>
-              <tr>
-                <td><strong>주파수</strong></td>
-                <td>낮은 주파수 (~1 MHz)</td>
-                <td>높은 주파수 (~100 MHz)</td>
-              </tr>
-              <tr>
-                <td><strong>위생</strong></td>
-                <td>전극 살균/소독 필요</td>
-                <td>간편 (비접촉)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="info-box tip" style="margin-top:10px;">
+          💡 <strong>비유:</strong> 전극 두 개를 <strong>전기 저울</strong>이라고 생각하세요. 수분이 많아지면 저울 눈금이 올라가고 센서가 이를 읽어냅니다.
         </div>
       </div>
-    </div>
 
-    <script src="js/app.js"></script>
+      <div class="section-heading">2️⃣ 맴돌이 전류 센서 – 임피던스(Impedance) 변화</div>
+      <div class="card">
+        <img src="img/impedance_diagram.png" alt="임피던스 원리"
+          style="max-width:100%; display:block; margin:0 auto; border-radius:8px;">
+        <div style="margin-top:15px;">
+          <strong>원리:</strong> 코일 위에 고주파 전류를 흐르게 하여 피부에 맴돌이 전류를 유도합니다. 피부에 수분이 많을수록 전기전도도가 높아져 맴돌이 전류가 강해지고, 코일의
+          임피던스(저항 성분)가 감소합니다.
+        </div>
+        <div class="info-box note" style="margin-top:10px;">
+          📻 <strong>비유:</strong> 코일을 <strong>무선 스피커</strong>라고 생각하세요. 물이 많으면 소리(전류 소용돌이)가 더 잘 나게 되고, 스피커는 더 적은 힘으로
+          작동하게 됩니다.
+        </div>
+      </div>
+
+      <div class="section-heading">3️⃣ 한눈에 비교하기</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>코네오미터 (정전용량)</th>
+              <th>비접촉 센서 (임피던스)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>접촉 여부</strong></td>
+              <td>피부에 직접 닿음</td>
+              <td>비접촉 (코일을 띄움)</td>
+            </tr>
+            <tr>
+              <td><strong>측정 원리</strong></td>
+              <td>정전용량 증가 ↑</td>
+              <td>임피던스 감소 ↓</td>
+            </tr>
+            <tr>
+              <td><strong>주파수</strong></td>
+              <td>낮은 주파수 (~1 MHz)</td>
+              <td>높은 주파수 (~100 MHz)</td>
+            </tr>
+            <tr>
+              <td><strong>위생</strong></td>
+              <td>전극 살균/소독 필요</td>
+              <td>간편 (비접촉)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+     TAB: 자료실 (RESOURCES)
+  ═══════════════════════════════════════ -->
+  <div class="tab-content" id="tab-resources">
+    <div class="page">
+      <div class="page-title">📥 <span>자료실: 실험 데이터 & 코드</span></div>
+      <div class="page-subtitle">실제 실험에 필요한 템플릿과 아두이노 코드를 여기서 확인하세요.</div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon blue">📊</div>
+            <div>
+              <div class="card-title">데이터 기록 템플릿</div>
+              <div class="card-subtitle">SkinSense_Data_Log_Template.csv</div>
+            </div>
+          </div>
+          <p style="margin-bottom:12px; font-size:14px;">엑셀이나 구글 시트로 실험 데이터를 체계적으로 관리할 수 있는 표준 서식입니다.</p>
+          <a href="SkinSense_Data_Log_Template.csv" download class="btn btn-outline"
+            style="text-decoration:none; display:inline-block;">파일 다운로드</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon mint">🤖</div>
+            <div>
+              <div class="card-title">아두이노 측정 코드</div>
+              <div class="card-subtitle">SkinSense_Measurement_Arduino.ino</div>
+            </div>
+          </div>
+          <p style="margin-bottom:12px; font-size:14px;">센서 측정(주파수, 거리, 온도)을 위한 표준 펌웨어 코드입니다.</p>
+          <a href="SkinSense_Measurement_Arduino.ino" download class="btn btn-outline"
+            style="text-decoration:none; display:inline-block;">파일 다운로드</a>
+        </div>
+      </div>
+
+      <div class="section-heading">📝 코드 미리보기 (Arduino)</div>
+      <div class="card" style="background:#1e1e1e; padding:16px; border-radius:8px;">
+        <pre style="color:#d4d4d4; font-family:'Courier New', monospace; font-size:13px; overflow-x:auto;">
+<code>
+#include &lt;FreqCount.h&gt;
+
+void setup() {
+Serial.begin(115200);
+FreqCount.begin(1000); // 1초간 게이트 타임
+}
+
+void loop() {
+if (FreqCount.available()) {
+  unsigned long count = FreqCount.read();
+  Serial.println(count);
+}
+}
+</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 
 </html>
