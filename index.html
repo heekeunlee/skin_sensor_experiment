@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkinSense 교육 포털 — 비접촉 피부 수분 측정 프로젝트</title>
   <meta name="description" content="기초부터 배우는 비접촉 피부 수분 측정 실험 교육 포털. 세미나, 용어집, 실험 가이드를 제공합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -62,16 +67,23 @@
     <div class="page">
 
       <div class="hero">
-        <div class="hero-badge">🎓 누구나 도전하는 기초 과학 실험</div>
-        <h1 class="hero-title">
-          피부를 <span
-            style="background:linear-gradient(90deg,#00d4aa,#4f9eff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">건드리지
-            않고</span><br>수분을 측정한다
-        </h1>
-        <p class="hero-desc">
-          맴돌이전류(Eddy Current)를 이용한 비접촉 피부 수분 측정 실험 프로젝트.<br>
-          비전공 입문생 3명이 12주 만에 논문 수준의 데이터를 만들어내는 도전의 여정.
-        </p>
+        <div class="hero-content">
+          <div class="hero-badge">🎓 기초 과학 실험 입문 가이드</div>
+          <h1 class="hero-title">
+            피부를 <span class="gradient-text">건드리지 않고</span><br>수분을 측정한다
+          </h1>
+          <p class="hero-desc">
+            맴돌이전류(Eddy Current)를 이용한 비접촉 피부 수분 측정 프로젝트.<br>
+            입문자가 논문 수준의 데이터를 만들어내는 도전의 여정을 함께합니다.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="showTab('tab-invitro')">실험 시작하기</button>
+            <button class="btn btn-secondary" onclick="showTab('tab-sem1')">이론 배우기</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="img/hero_bg.png" alt="SkinSense Experiment" class="hero-img">
+        </div>
       </div>
 
       <div class="stat-grid">
